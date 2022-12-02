@@ -1,0 +1,5 @@
+RPM package for Rust TLS Server
+
+> sudo rpm -i rts-2.0.0-0.x86_64.rpm
+>
+> rts
