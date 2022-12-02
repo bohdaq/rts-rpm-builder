@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="icon" href="/favicon.svg" />
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Server is Up and Running</h1>
+            <div>You see default page served by the server. You can change this page to whatever you need.
+                Simply put <span class="accent">index.html</span> in your server's root folder.</div>
+            <div>Whatever you put in the server folder will be accessible through the <a href="/" class="location accent">URL</a>.
+                For example to access this site you are using certificate available at this URL <a href="/certificate.crt" class="location-crt accent">TODO URL</a>,
+                mapped to your server's folder.</div>
+            <div>Replace <span class="accent">certificate.crt</span> and <span class="accent">private.key</span> with your trusted certificate and private key
+                to resolve browser warning message. The <span class="accent">private.key</span> is designed to be not available for the users.
+            </div>
+            <div>If you put file bigger than there is available memory and then request it,
+                server will be stopped with an error.</div>
+            <div>These are default resources provided by the server: <span class="accent">favicon.svg, index.html, 404.html,
+                script.js</span> and <span class="accent">style.css</span>. To override put corresponding files in the server's root folder.</div>
+            <div>Security based restrictions:
+                <ul>
+                    <li>Resource inclusion works only via https. This means if you try to include any js, css, image, video,
+                        whatever, it needs to be served on https server</li>
+                    <li>Inline javascript won't be executed. You need to put all js as scripts.</li>
+                    <li>On supported browsers, Referer header won't be sent.</li>
+                    <li>Website can not be used in iframe on other domains.</li>
+                    <li>Resources will be sent to a user with a Content-Type based on file extension.
+                        In practice this means if you, for example, create a js file named script.jstypo,
+                        it won't be interpreted by a client's browser. Use correct file extensions.
+                    </li>
+                </ul>
+
+            <h2>Useful links: </h2>
+            <ul>
+                <li><a href="https://github.com/bohdaq/rust-tls-server">Rust TLS Server</a> — server's repository page</li>
+                <li><a href="https://github.com/bohdaq/rust-web-server">Rust Web Server</a> — server's core repository page</li>
+            </ul>
+        </div>
+    <script src="script.js"></script>
+    </body>
+</html>
